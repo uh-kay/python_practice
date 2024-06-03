@@ -2,6 +2,7 @@ from restaurant import Restaurant, IceCreamStand
 from user import User
 from admin import Admin
 from electric_car import Car, ElectricCar, Battery
+from die import Die
 
 # 9-1
 # restaurant = Restaurant('Shangrila', 'Chinese')
@@ -65,9 +66,9 @@ from electric_car import Car, ElectricCar, Battery
 # bob.show_privileges()
 
 # 9-8
-alice = Admin('Alice', 'Steward', 26, 'Japan', ['can add post', 'can delete post',
- 'can ban user'])
-alice.priveleges.show_privileges()
+# alice = Admin('Alice', 'Steward', 26, 'Japan', ['can add post', 'can delete post',
+#  'can ban user'])
+# alice.priveleges.show_privileges()
 
 # 9-9
 # my_leaf = ElectricCar('nissan', 'leaf', 2024)
@@ -76,3 +77,40 @@ alice.priveleges.show_privileges()
 # my_leaf.battery.get_range()
 # my_leaf.battery.upgrade_battery()
 # my_leaf.battery.get_range()
+
+# 9-13
+# new_die = Die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+# new_die.roll_die()
+
+# ten_sided_die = Die(10)
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+# ten_sided_die.roll_die()
+
+twenty_sided_die = Die(20)
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
+twenty_sided_die.roll_die()
