@@ -1,0 +1,5 @@
+In Python you can create variables.
+In Python you can print to stdout.
+In Python you can do math.
+In Python you can define functions.
+In Python you can create classes.

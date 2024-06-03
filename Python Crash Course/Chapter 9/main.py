@@ -116,6 +116,7 @@ from die import Die
 # twenty_sided_die.roll_die()
 
 # 9-14 and 9-15
+# TODO: Improve the code quality
 from random import choice
 
 char_list = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 
