@@ -103,14 +103,34 @@ from die import Die
 # ten_sided_die.roll_die()
 # ten_sided_die.roll_die()
 
-twenty_sided_die = Die(20)
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
-twenty_sided_die.roll_die()
+# twenty_sided_die = Die(20)
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+# twenty_sided_die.roll_die()
+
+# 9-14 and 9-15
+from random import choice
+
+char_list = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 
+    'd', 'e')
+my_ticket = '5b2c'
+winning_ticket = ''
+count = 0
+
+while True:
+    for i in range(4):
+        winning_ticket += choice(char_list)
+    if winning_ticket == my_ticket:
+        break
+    winning_ticket = ''
+    count += 1
+
+print(f"The winner of the lottery is: {winning_ticket}")
+print(f"It took {count} tries to win.")
