@@ -61,3 +61,27 @@ from pathlib import Path
 #     print("Your birthday appears in the first million digits of pi!")
 # else:
 #     print("Your birthday does not appear in the first million digits of pi.")
+
+# 10-4
+
+# name = input("Please enter your name: ")
+# path = Path('Python Crash Course/Chapter 10/guest.txt')
+# path.write_text(f"Guest name: {name}")
+
+# 10-5
+
+path = Path('Python Crash Course/Chapter 10/guest_book.txt')
+guest_list = 'Guest name: \n'
+prompt = "Please enter your name"
+prompt += "\n(type 'quit' to quit): "
+count = 1
+
+while True:
+    name = input(prompt)
+    if name == 'quit':
+        break
+    guest_list += f"{count}. {name}\n"
+    count += 1
+
+path.write_text(guest_list)
+
