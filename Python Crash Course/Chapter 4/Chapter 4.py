@@ -1,101 +1,125 @@
-'''4-3. Counting to Twenty: Use a for loop to print the numbers from 1 to 20,
-inclusive.'''
+# 4-1
 
-# for number in range(1, 21):
-#     print(number)
+pizzas = ['meat lover', 'cheese galore', 'pepperoni']
+for pizza in pizzas:
+    print(f"I like {pizza} pizza.")
 
-'''4-4. One Million: Make a list of the numbers from one to one million, and 
-then use a for loop to print the numbers. (If the output is taking too long, 
-stop it by pressing CTRL-C or by closing the output window.)'''
+print(f"I like {pizzas[0]} pizza.")
+print(f"I like {pizzas[1]} pizza.")
+print(f"I like {pizzas[2]} pizza.")
+print("I really love pizza!")
+
+# 4-2
+
+pets = ["dog", "cat", "hamster", "parrot"]
+for animal in pets:
+    print(f"A {animal} would make a great pet!")
+
+print("Any of these animals would make a great pet!")
+
+# 4-3
+
+for number in range(1, 21):
+    print(number)
+
+# 4-4
 
 numbers = list(range(1, 1000001))
 
-# for number in numbers:
-#     print(number)
+for number in numbers:
+    print(number)
 
-'''4-5. Summing a Million: Make a list of the numbers from one to one million, 
-and then use min() and max() to make sure your list actually starts at one and 
-ends at one million. Also, use the sum() function to see how quickly Python 
-can add a million numbers.'''
+# 4-5
 
-# print(min(numbers))
-# print(max(numbers))
-# print(sum(numbers))
+print(min(numbers))
+print(max(numbers))
+print(sum(numbers))
 
-'''4-6. Odd Numbers: Use the third argument of the range() function to make a 
-list of the odd numbers from 1 to 20. Use a for loop to print each number.'''
+# 4-6
 
 odd_numbers = list(range(1, 20, 2))
 
-# for num in odd_numbers:
-#     print(num)
+for num in odd_numbers:
+    print(num)
 
-'''4-7. Threes: Make a list of the multiples of 3, from 3 to 30. Use a for loop
-to print the numbers in your list.'''
+# 4-7
 
 threes = list(range(3, 31, 3))
 
-# for num in threes:
-#     print(num)
+for num in threes:
+    print(num)
 
-'''4-8. Cubes: A number raised to the third power is called a cube. For 
-example, the cube of 2 is written as 2**3 in Python. Make a list of the first 
-10 cubes (that is, the cube of each integer from 1 through 10), and use a for 
-loop to print out the value of each cube.'''
+# 4-8
 
-# cubes = []
-# for num in range(1, 11):
-#     cubes.append(num ** 3)
+cubes = []
+for num in range(1, 11):
+    cubes.append(num ** 3)
 
-# for num in cubes:
-#     print(num)
+for num in cubes:
+    print(num)
 
-'''4-9. Cube Comprehension: Use a list comprehension to generate a list of the
-first 10 cubes.'''
+# 4-9
 
 cubes = [value**3 for value in range(1, 11)]
-# for num in cubes:
-#     print(num)
+for num in cubes:
+    print(num)
 
-'''4-10. Slices: Using one of the programs you wrote in this chapter, add
-several lines to the end of the program that do the following:
-• Print the message The first three items in the list are:. Then use a slice to
-print the first three items from that program's list.
-• Print the message Three items from the middle of the list are:. Then use a
-slice to print three items from the middle of the list.
-• Print the message The last three items in the list are:. Then use a slice to
-print the last three items in the list.
-'''
+# 4-10
 
-# print("The first three items in the list are:")
-# for num in cubes[:3]:
-#     print(num)
+print("The first three items in the list are:")
+for num in cubes[:3]:
+    print(num)
 
-# print("Three items from the middle of the list are:")
-# for num in cubes[4:7]:
-#     print(num)
+print("Three items from the middle of the list are:")
+for num in cubes[4:7]:
+    print(num)
 
-# print("The last three items in the list are:")
-# for num in cubes[7:]:
-#     print(num)
+print("The last three items in the list are:")
+for num in cubes[7:]:
+    print(num)
 
-'''4-13. Buffet: A buffet-style restaurant offers only five basic foods. Think 
-of five simple foods, and store them in a tuple.
-• Use a for loop to print each food the restaurant offers.
-• Try to modify one of the items, and make sure that Python rejects the
-change.
-• The restaurant changes its menu, replacing two of the items with different
-foods. Add a line that rewrites the tuple, and then use a for loop to print
-each of the items on the revised menu.'''
+# 4-11
 
-menu = ('fried rice', 'burger', 'fried chicken', 'pizza', 'lasagna')
+pizzas = ['meat lover', 'cheese galore', 'pepperoni']
+friend_pizzas = pizzas[:]
+
+pizzas.append('american favorite')
+friend_pizzas.append('tuna melt')
+
+print("My favorite pizzas are:")
+for pizza in pizzas:
+    print(f"- {pizza}")
+
+print("\nMy friend's favorite pizzas are:")
+for pizza in friend_pizzas:
+    print(f"- {pizza}")
+
+# 4-12
+
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:]
+
+my_foods.append('cannoli')
+friend_foods.append('ice cream')
+
+print("My foods are:")
+for food in my_foods:
+    print(f"- {food}")
+
+print("\nMy friend's foods are:")
+for food in friend_foods:
+    print(f"- {food}")
+
+# 4-13
+
+menu = ('fried rice', 'burger', 'fried chicken', 'chicken soup', 'porridge')
 print("Our menu:")
 for food in menu:
     print(f"- {food}")
 
-# foods[0] = 'sushi' #tuple can't be modified
+menu[0] = 'sushi' #tuple can't be modified
 
-menu = ('curry udon', 'burger', 'fried chicken', 'french fries', 'lasagna')
+menu = ('curry udon', 'burger', 'fried chicken', 'beef stew', 'porridge')
 print("Our new menu:")
 for food in menu:
     print(f"- {food}")
