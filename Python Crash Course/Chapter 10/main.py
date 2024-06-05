@@ -70,18 +70,31 @@ from pathlib import Path
 
 # 10-5
 
-path = Path('Python Crash Course/Chapter 10/guest_book.txt')
-guest_list = 'Guest name: \n'
-prompt = "Please enter your name"
-prompt += "\n(type 'quit' to quit): "
-count = 1
+# path = Path('Python Crash Course/Chapter 10/guest_book.txt')
+# guest_list = 'Guest name: \n'
+# prompt = "Please enter your name"
+# prompt += "\n(type 'quit' to quit): "
+# count = 1
 
-while True:
-    name = input(prompt)
-    if name == 'quit':
-        break
-    guest_list += f"{count}. {name}\n"
-    count += 1
+# while True:
+#     name = input(prompt)
+#     if name == 'quit':
+#         break
+#     guest_list += f"{count}. {name}\n"
+#     count += 1
 
-path.write_text(guest_list)
+# path.write_text(guest_list)
 
+# 10-6
+
+try:
+    first_number = input("Please enter the first number: ")
+    first_number = int(first_number)
+
+    second_number = input("Now enter the second number: ")
+    second_number = int(second_number)
+except ValueError:
+    print("Please enter only number.")
+else:
+    answer = first_number + second_number
+    print(f"The sum of {first_number} and {second_number} is: {answer}.\n")
