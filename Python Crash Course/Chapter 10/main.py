@@ -119,11 +119,36 @@ from pathlib import Path
 
 # 10-8
 
-try:
-    dogs_path = Path('Python Crash Course/Chapter 10/dogs.txt')
-    cats_path = Path('Python Crash Course/Chapter 10/cats.txt')
+# try:
+#     dogs_path = Path('Python Crash Course/Chapter 10/dogs.txt')
+#     cats_path = Path('Python Crash Course/Chapter 10/cats.txt')
 
-    print(dogs_path.read_text())
-    print(cats_path.read_text())
+#     print(dogs_path.read_text())
+#     print(cats_path.read_text())
+# except FileNotFoundError:
+#     print(f"Sorry, {cats_path} is missing.")
+
+# 10-9
+
+# try:
+#     dogs_path = Path('Python Crash Course/Chapter 10/dogs.txt')
+#     cats_path = Path('Python Crash Course/Chapter 10/cats.txt')
+
+#     print(dogs_path.read_text())
+#     print(cats_path.read_text())
+# except FileNotFoundError:
+#     pass
+
+# 10-10
+
+try:
+    path = Path('Python Crash Course/Chapter 10/oliver twist.txt')
+    contents = path.read_text(encoding='utf-8')
+    word_count = 0
+
+    for line in contents.splitlines():
+        word_count += line.lower().count('the ')
+    
+    print(word_count)
 except FileNotFoundError:
-    print(f"Sorry, {cats_path} is missing.")
+    pass
