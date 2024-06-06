@@ -1,6 +1,6 @@
 # 10-1
 from pathlib import Path
-
+import json
 
 # path = Path('Python Crash Course/Chapter 10/learning_python.txt')
 # contents = path.read_text()
@@ -141,14 +141,29 @@ from pathlib import Path
 
 # 10-10
 
-try:
-    path = Path('Python Crash Course/Chapter 10/oliver twist.txt')
-    contents = path.read_text(encoding='utf-8')
-    word_count = 0
+# try:
+#     path = Path('Python Crash Course/Chapter 10/oliver twist.txt')
+#     contents = path.read_text(encoding='utf-8')
+#     word_count = 0
 
-    for line in contents.splitlines():
-        word_count += line.lower().count('the ')
+#     for line in contents.splitlines():
+#         word_count += line.lower().count('the ')
     
-    print(word_count)
-except FileNotFoundError:
-    pass
+#     print(word_count)
+# except FileNotFoundError:
+#     pass
+
+# 10-11
+
+path = Path('Python Crash Course/Chapter 10/favorite_number.json')
+
+fav_num = input("Enter your favorite number: ")
+
+# Write user's favorite number into favorite_number.json
+contents = json.dumps(fav_num)
+path.write_text(contents)
+
+# Print favorite_number.json
+contents = path.read_text()
+fav_num = json.loads(contents)
+print(f"I know your favorite number! It's {fav_num}.")

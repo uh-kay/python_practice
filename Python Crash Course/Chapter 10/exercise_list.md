@@ -86,3 +86,9 @@ determines how many times the word 'the' appears in each text. This will be
 an approximation because it will also count words such as 'then' and 'there'.
 Try counting 'the ', with a space in the string, and see how much lower your
 count is.
+
+## 10-11. Favorite Number: 
+Write a program that prompts for the user’s favorite
+number. Use json.dumps() to store this number in a file. Write a separate pro-
+gram that reads in this value and prints the message “I know your favorite
+number! It’s _____.”
