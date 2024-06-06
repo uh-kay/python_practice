@@ -87,14 +87,43 @@ from pathlib import Path
 
 # 10-6
 
-try:
-    first_number = input("Please enter the first number: ")
-    first_number = int(first_number)
+# try:
+#     first_number = input("Please enter the first number: ")
+#     first_number = int(first_number)
 
-    second_number = input("Now enter the second number: ")
-    second_number = int(second_number)
-except ValueError:
-    print("Please enter only number.")
-else:
-    answer = first_number + second_number
-    print(f"The sum of {first_number} and {second_number} is: {answer}.\n")
+#     second_number = input("Now enter the second number: ")
+#     second_number = int(second_number)
+# except ValueError:
+#     print("Please enter only number.")
+# else:
+#     answer = first_number + second_number
+#     print(f"The sum of {first_number} and {second_number} is: {answer}.\n")
+
+# 10-7
+
+# while True:
+#     try:
+#         first_number = input("Please enter the first number: ")
+#         first_number = int(first_number)
+
+#         second_number = input("Now enter the second number: ")
+#         second_number = int(second_number)
+#     except ValueError:
+#         print("Please enter only number.")
+#         continue
+#     else:
+#         answer = first_number + second_number
+#         print(f"The sum of {first_number} and {second_number}" 
+#         f"is: {answer}.\n")
+#         break
+
+# 10-8
+
+try:
+    dogs_path = Path('Python Crash Course/Chapter 10/dogs.txt')
+    cats_path = Path('Python Crash Course/Chapter 10/cats.txt')
+
+    print(dogs_path.read_text())
+    print(cats_path.read_text())
+except FileNotFoundError:
+    print(f"Sorry, {cats_path} is missing.")
