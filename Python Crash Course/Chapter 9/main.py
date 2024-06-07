@@ -119,8 +119,8 @@ from die import Die
 # TODO: Improve the code quality
 from random import choice
 
-char_list = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 
-    'd', 'e')
+char_list = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c',
+             'd', 'e')
 my_ticket = '5b2c'
 winning_ticket = ''
 count = 0

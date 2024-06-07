@@ -15,7 +15,7 @@ ready.'''
 
 # if num_of_people > 8:
 #     print("Sorry, you'll have to wait for a table.")
-# else:  
+# else:
 #     print("Your table is ready.")
 
 '''7-3. Multiples of Ten: Ask the user for a number, and then report whether 
@@ -127,7 +127,7 @@ listing each sandwich that was made.'''
 
 # while sandwich_orders:
 #     current_sandwich = sandwich_orders.pop()
-    
+
 #     print(f"Making sandwich: {current_sandwich.title()}")
 #     finished_sandwiches.append(current_sandwich)
 
@@ -143,7 +143,7 @@ run out of pastrami, and then use a while loop to remove all occurrences of
 in finished_sandwiches.'''
 
 # sandwich_orders = [
-#     'grilled cheese', 'pastrami', 'french', 'pastrami', 'egg', 'chicken', 
+#     'grilled cheese', 'pastrami', 'french', 'pastrami', 'egg', 'chicken',
 #     'falafel', 'pastrami']
 # finished_sandwiches = []
 
@@ -154,7 +154,7 @@ in finished_sandwiches.'''
 
 # while sandwich_orders:
 #     current_sandwich = sandwich_orders.pop()
-    
+
 #     print(f"Making sandwich: {current_sandwich.title()}")
 #     finished_sandwiches.append(current_sandwich)
 
@@ -174,7 +174,7 @@ poll.'''
 #     name = input("What is your name? ")
 #     response = input(
 #         "If you could visit one place in the world, where would you go? ")
-    
+
 #     responses[name] = response
 
 #     repeat = input("Would you like to let another person respond? (yes/ no) ")

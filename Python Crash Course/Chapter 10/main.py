@@ -6,7 +6,6 @@ import json
 # contents = path.read_text()
 # lines = contents.splitlines()
 
-
 # print(contents)
 
 # line_list = []
@@ -113,7 +112,7 @@ import json
 #         continue
 #     else:
 #         answer = first_number + second_number
-#         print(f"The sum of {first_number} and {second_number}" 
+#         print(f"The sum of {first_number} and {second_number}"
 #         f"is: {answer}.\n")
 #         break
 
@@ -148,7 +147,7 @@ import json
 
 #     for line in contents.splitlines():
 #         word_count += line.lower().count('the ')
-    
+
 #     print(word_count)
 # except FileNotFoundError:
 #     pass

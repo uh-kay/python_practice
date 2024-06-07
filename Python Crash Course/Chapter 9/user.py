@@ -1,5 +1,6 @@
 class User:
     """A simple attempt of modeling a user."""
+
     def __init__(self, first_name, last_name, age, address, login_attempts=0):
         """Initializes attributes to describe a user."""
         self.first_name = first_name

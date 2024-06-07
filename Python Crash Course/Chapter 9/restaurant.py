@@ -23,8 +23,10 @@ class Restaurant:
         """Increments the number of customers that have been served."""
         self.number_served += num
 
+
 class IceCreamStand(Restaurant):
     """An attempt to model an ice cream stand based on restaurant class."""
+
     def __init__(self, restaurant_name, cuisine_type, flavors, number_served=0):
         """
         Initializes attributes of the parent class.
@@ -32,8 +34,6 @@ class IceCreamStand(Restaurant):
         """
         super().__init__(restaurant_name, cuisine_type, number_served=0)
         self.flavors = flavors
-        
-        
+
     def display_flavors(self):
         print(f"Selected flavors: {self.flavors}")
-

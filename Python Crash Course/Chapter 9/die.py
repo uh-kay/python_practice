@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Die:
     """An attempt to model a die."""
 

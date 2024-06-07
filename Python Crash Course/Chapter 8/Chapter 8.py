@@ -83,15 +83,16 @@ store the number of songs on an album. If the calling line includes a value for
 the number of songs, add that value to the album's dictionary. Make at least
 one new function call that includes the number of songs on an album.'''
 
+
 def make_album(name, title, num_of_songs=None):
     album = {'artist_name': name, 'title': title}
     if num_of_songs:
         album['number_of_songs'] = num_of_songs
     return album
 
+
 print(make_album('Yorushika', "A Loser Doesn't Need an Encore", 9))
 print(make_album('Imagine Dragons', "Evolve"))
 print(make_album('YOASOBI', "The Book", 9))
 
 # To-do 8-8 to 8-17
-

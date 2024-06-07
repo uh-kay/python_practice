@@ -38,8 +38,8 @@ guests.append('Noa')
 
 # 3-7
 
-print("Sorry everyone, it seems like the new dinner table won't arrive in" 
-    "time, so I only have space for two guests.")
+print("Sorry everyone, it seems like the new dinner table won't arrive in"
+      "time, so I only have space for two guests.")
 print(f"Sorry {guests.pop()}, I can't invite you to the dinner party")
 print(f"Sorry {guests.pop()}, I can't invite you to the dinner party")
 print(f"Sorry {guests.pop()}, I can't invite you to the dinner party")
@@ -51,4 +51,3 @@ print(f'{guests[1]}, you are still invited to my dinner party!')
 del guests[1]
 del guests[0]
 print(guests)
-

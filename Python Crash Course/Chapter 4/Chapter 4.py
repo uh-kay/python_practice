@@ -117,7 +117,7 @@ print("Our menu:")
 for food in menu:
     print(f"- {food}")
 
-menu[0] = 'sushi' #tuple can't be modified
+menu[0] = 'sushi'  # tuple can't be modified
 
 menu = ('curry udon', 'burger', 'fried chicken', 'beef stew', 'porridge')
 print("Our new menu:")

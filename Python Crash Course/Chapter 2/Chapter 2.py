@@ -1,5 +1,6 @@
 # 2-1
 
+import this
 message = "Python is fun!\n"
 print(message)
 
@@ -25,8 +26,8 @@ print(name.title())
 
 # 2-5
 
-print('Albert Einstein once said, "A person who never made a mistake never ' 
-'tried anything new."')
+print('Albert Einstein once said, "A person who never made a mistake never '
+      'tried anything new."')
 
 # 2-6
 
@@ -63,7 +64,7 @@ print(f"My favorite number is: {favorite_number}")
 # 2-11
 
 # uhkay, 04-06-2024
-#Prints addition, subtraction, division, and multiplication that all results 8.
+# Prints addition, subtraction, division, and multiplication that all results 8.
 print(2 + 6)
 print(9 - 1)
 print(32 / 4)
@@ -76,5 +77,3 @@ filename_without_extension = filename.removesuffix('.txt')
 print(filename_without_extension)
 
 # 2-12
-
-import this
