@@ -1,125 +1,93 @@
-from random import randint
+import random
 
 
-# TODO fix duplicate number case
-
-print("Bagels, a deductive logic game.")
-
-print("I am thinking of a 3-digit number. Try to guess what it is.")
-print("Here are some clues:")
-print("When I say: \tThat means:")
-print("  Pico \t\tOne digit is correct but in the wrong position.")
-print("  Fermi \tOne digit is correct and in the right position.")
-print("  Bagels \tNo digit is correct.")
-print("I have thought up a number.")
-print("You have 10 guesses to get it.", end="")
+num_digits = 3
+max_guesses = 10
 
 
-def get_random_number():
-    """Get a random number from 1 to 999 and convert it into string."""
-    random_num = randint(1, 999)
+def main():
+    print('Bagels, a deductive logic game.')
 
-    """Add 0 in front if the number is less than 100 and 00 if less than 10"""
-    if random_num < 10:
-        random_num = str(random_num)
-        random_num = '00' + random_num
+    print('''
 
-    elif random_num < 100:
-        random_num = str(random_num)
-        random_num = '0' + random_num
+I am thinking of a {}-digit number. 
+Try to guess what it is. Here are some clues:
+When I say: \tThat means:
+Pico \t\tOne digit is correct but in the wrong position.
+Fermi \tOne digit is correct and in the right position.
+Bagels \tNo digit is correct.'''.format(num_digits))
 
-    else:
-        random_num = str(random_num)
+    while True:  # Main game loop.
+        # Stores the secret number player needs to guess.
+        secret_num = get_secret_num(num_digits)
+        print('I have thought up a number.')
+        print('You have {} guesses to get it.'.format(max_guesses))
 
-    return random_num
+        num_guesses = 1
+        while num_guesses <= max_guesses:
+            guess = ''
+            # Keep looping until they enter a valid guess:
+            while len(guess) != num_digits or not guess.isdecimal():
+                print('Guess #{}'.format(num_guesses))
+                guess = input('> ')
 
+            clues = get_clues(guess, secret_num)
+            print(clues)
+            num_guesses += 1
 
-def str_compare(num):
-    score = []
+            if guess == secret_num:
+                break  # They're correct so break out of this loop.
 
-    # Fermi = 1, Pico = 2, Bagels = 0
+            if num_guesses > max_guesses:
+                print('You ran out of guesses.')
+                print('The answer was {}.'.format(secret_num))
 
-    if num[0] == num_list[0]:
-        score.append('1')
-    elif num[0] != num_list[0] and num[0] in num_list:
-        score.append('2')
-    elif num[0] not in num_list:
-        score.append('0')
-
-    if num[1] == num_list[1]:
-        score.append('1')
-    elif num[1] != num_list[1] and num[1] in num_list:
-        score.append('2')
-    elif num[0] not in num_list:
-        score.append('0')
-
-    if num[2] == num_list[2]:
-        score.append('1')
-    elif num[2] != num_list[2] and num[2] in num_list:
-        score.append('2')
-    elif num[0] not in num_list:
-        score.append('0')
-
-    return score
-
-
-def game_logic(score):
-    state = ""
-
-    if score == ['0', '0', '0']:
-        return state == 'bagels'
-    elif score == ['1', '1', '1']:
-        return state == 'win'
-    else:
-        for num in score:
-            if num == '1':
-                print("Fermi", end=" ")
-            elif num == "2":
-                print('Pico', end=" ")
-
-
-count = 1
-num_list = []
-random_num = get_random_number()
-for i in range(3):
-    num_list.append(random_num[i])
-
-while True:
-    print(f"\nGuess #{count}:")
-    num = input("> ")
-    count += 1
-    score = []
-    state = ""
-
-    print(random_num)
-    score = str_compare(num)
-    # print(score)
-    state = game_logic(score)
-
-    if state == 'win':
-        play_again = input("Do you want to play again? (yes or no)")
-        if play_again == 'yes':
-            count = 1
-            random_num = get_random_number()
-            for i in range(3):
-                num_list.append(random_num[i])
-            continue
-        else:
+        # Ask the player if they want to play again.
+        print('Do you want to play again? (yes or no)')
+        if not input('> ').lower().startswith('y'):
             break
 
-    # if score == ['0', '0', '0']:
-    #     print("Bagels", end="")
-    # elif score == ['1', '1', '1']:
-    #     print("You win!")
-    #     play_again = input("Do you want to play again? (yes or no)")
-    #     if play_again == 'yes':
-    #         continue
-    #     else:
-    #         break
+    print('Thanks for playing!')
 
-    # else:
-    #     for num in score:
-    #         if num == '1':
-    #             print("Fermi", end=" ")
-    #         elif num == "2":
-    #             print('Pico', end=" ")
+
+def get_secret_num(num_digits):
+    """Returns a string made up of num_digits unique random digits."""
+    numbers = list('0123456789')  # Make a list of digits 0 to 9.
+    random.shuffle(numbers)  # Shuffle the order randomly.
+
+    # Get the first num_digits digits in the list for the secret numbers:
+    secret_num = ''
+    for i in range(num_digits):
+        secret_num += str(numbers[i])
+    return secret_num
+
+
+def get_clues(guess, secret_num):
+    """Returns a string with pico, fermi, bagels clues for a guess and secret
+    number pair."""
+    if guess == secret_num:
+        return 'You win!'
+
+    clues = []
+
+    for i in range(len(guess)):
+        if guess[i] == secret_num[i]:
+            # A correct digit is in the correct place.
+            clues.append('Fermi')
+        elif guess[i] in secret_num:
+            # A correct digit is in the wrong place.
+            clues.append('Pico')
+
+    if len(clues) == 0:
+        return 'Bagels'  # There are no correct digits.
+    else:
+        # Sort the clues into alphabetical order so their original order
+        # doesn't give information away.
+        clues.sort()
+        # Make a single string from the list of string clues.
+        return ' '.join(clues)
+
+
+# If the program is run (instead of imported), run the game:
+if __name__ == '__main__':
+    main()
