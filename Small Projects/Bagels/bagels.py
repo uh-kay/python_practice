@@ -1,12 +1,11 @@
 import random
 
 
-num_digits = 3
-max_guesses = 10
-
-
 def main():
     print('Bagels, a deductive logic game.')
+
+    num_digits = get_num_digits()
+    max_guesses = get_max_guesses()
 
     print('''
 
@@ -48,6 +47,20 @@ Bagels \tNo digit is correct.'''.format(num_digits))
             break
 
     print('Thanks for playing!')
+
+
+def get_num_digits():
+    """Ask the player the num_digits and returns it."""
+    num_digits = int(input('How many digits would you like to guess? '
+                           '(default is 3) \n> '))
+    return num_digits
+
+
+def get_max_guesses():
+    """Ask the player the max_guesses and returns it."""
+    max_guesses = int(input('How many guess attempt would you like? '
+                            '(default is 10)\n> '))
+    return max_guesses
 
 
 def get_secret_num(num_digits):
