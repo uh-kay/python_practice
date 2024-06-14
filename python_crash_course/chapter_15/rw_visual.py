@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from random_walk import RandomWalk
+from refactoring import RandomWalk
 
 # Keep making new walks, as long as the program is active.
 while True:
